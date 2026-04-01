@@ -40,7 +40,7 @@ The frontend is an Angular 20 SPA with Angular Material and Tailwind CSS. The RE
 
 ### Admin Panel (Protected)
 - **Dashboard** - At-a-glance stats: published posts count, category breakdown, quick navigation
-- **Post Management** - Create, edit, and delete posts with a rich text (WYSIWYG) editor
+- **Post Management** - Create, edit, and delete posts with a rich text (ngx-editor) editor
 - **Gallery Management** - Upload, preview, and delete church photos
 - **Content Organization** - Posts organized by category (News, Events, Catechesis, etc.)
 - **Secure Authentication** - JWT access tokens with automatic refresh token rotation
