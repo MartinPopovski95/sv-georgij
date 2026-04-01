@@ -1,0 +1,38 @@
+.main-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 0 40px 60px;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  section {
+    flex: 1;
+    min-width: 0;
+  }
+
+  aside {
+    flex-shrink: 0;
+    position: sticky;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 0 20px 40px;
+    min-height: unset;
+
+    aside { display: none; }
+  }
+}
+
+@media (max-width: 640px) {
+  .main-content { padding: 0 12px 30px; }
+}

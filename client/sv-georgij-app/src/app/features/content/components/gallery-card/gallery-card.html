@@ -1,0 +1,15 @@
+ <div class="blog-card-wrapper">
+   <div class="blog-card gallery-card" [class]="cardType()" [class.single-image]="!secondItem()">
+     <div class="card-image" (click)="openModal(firstItem().url)">
+       <img class="card-image-img" [src]="firstItem().url" [alt]="firstItem().fileName">
+     </div>
+     @if (secondItem()) {
+       <div class="card-content gallery-second-image" (click)="openModal(secondItem()!.url)">
+         <img class="card-image-img" [src]="secondItem()!.url" [alt]="secondItem()!.fileName">
+       </div>
+     }
+   </div>
+ </div>
+ @if (selectedImageUrl()) {
+   <app-image-modal [imageUrl]="selectedImageUrl()!" (closed)="closeModal()" />
+}

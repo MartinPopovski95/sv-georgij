@@ -1,0 +1,9 @@
+ <div class="blog-card-wrapper">
+   <a class="blog-card add-new-post-card" routerLink="/admin/posts/new" [queryParams]="category() ? { category: category() } : {}">
+     <div class="add-post-content">
+       <div class="add-post-icon">+</div>
+       <h3 class="add-post-title">Додај нов пост</h3>
+       <p class="add-post-description">Кликни за да создадеш нов блог пост</p>
+     </div>
+   </a>
+ </div>

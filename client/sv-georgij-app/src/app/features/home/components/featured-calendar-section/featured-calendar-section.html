@@ -1,0 +1,39 @@
+<div class="calendar-section">
+  <div class="calendar-background">
+    <div class="orthodox-calendar">
+
+      <!-- Navigation -->
+      <div class="calendar-navigation">
+        <button class="nav-btn" (click)="prevDay()">‹</button>
+        <button class="nav-today-btn" (click)="goToToday()" [class.active]="isToday()">Денес</button>
+        <button class="nav-btn" (click)="nextDay()">›</button>
+      </div>
+
+      <!-- Header -->
+      <div class="calendar-header">
+        <h2>Православен Календар</h2>
+        <span class="current-date">{{ formattedDate() }}</span>
+        <span class="old-calendar-date">Стар календар: {{ oldCalendarStr() }}</span>
+      </div>
+
+      <!-- Saints -->
+      @if (saints().length) {
+        <div class="saints-section">
+          <div class="saints-title">Светци на денот:</div>
+          @for (saint of saints(); track $index) {
+            <div class="saint-item">{{ saint }}</div>
+          }
+        </div>
+      }
+
+      <!-- Fasting -->
+      @if (typikon()) {
+        <div class="fasting-section">
+          <div class="fasting-label">Пост:</div>
+          <div class="fasting-status">{{ typikon() }}</div>
+        </div>
+      }
+
+    </div>
+  </div>
+</div>

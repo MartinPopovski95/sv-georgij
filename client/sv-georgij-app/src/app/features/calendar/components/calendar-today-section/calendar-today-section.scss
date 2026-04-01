@@ -1,0 +1,119 @@
+.calendar-container {
+	// max-width: 1200px;
+	margin: 0 auto;
+	// padding: 0 20px;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 30px;
+}
+/* Today's Section */
+.today-section {
+	background: linear-gradient(135deg, var(--primary-color) 0%, rgba(188, 108, 37, 0.8) 100%);
+	border-radius: 15px;
+	padding: 0;
+	overflow: hidden;
+	box-shadow: 0 8px 32px rgba(188, 108, 37, 0.3);
+	border: 1px solid rgba(188, 108, 37, 0.4);
+}
+
+.today-card {
+	background: rgba(249, 245, 235, 0.95);
+	margin: 3px;
+	border-radius: 12px;
+	padding: 25px;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	gap: 25px;
+	align-items: center;
+	backdrop-filter: blur(8px);
+
+	@media (max-width: 640px) {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+}
+
+.today-date {
+	text-align: center;
+	min-width: 120px;
+
+	@media (max-width: 640px) { min-width: unset; }
+}
+
+.day-name {
+	font-size: 1.1rem;
+	color: var(--dark-text);
+	margin-bottom: 5px;
+	opacity: 0.8;
+}
+
+.date-number {
+	font-size: 3rem;
+	font-weight: 700;
+	color: var(--primary-color);
+	line-height: 1;
+	margin-bottom: 5px;
+	text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.month-year {
+	font-size: 1.1rem;
+	color: var(--dark-text);
+	font-weight: 600;
+}
+
+.julian-date {
+	font-size: 0.9rem;
+	color: var(--dark-text);
+	margin-top: 5px;
+	opacity: 0.7;
+}
+
+.today-saints {
+	flex: 1;
+	padding: 0 20px;
+}
+
+.today-saints h3 {
+	color: var(--primary-color);
+	margin: 0 0 15px 0;
+	font-size: 1.2rem;
+}
+
+.saint-item {
+	background: rgba(40, 61, 59, 0.1);
+	padding: 10px 15px;
+	margin: 8px 0;
+	border-radius: 8px;
+	border-left: 4px solid var(--primary-color);
+	font-weight: 500;
+	color: var(--dark-text);
+}
+
+.today-fasting {
+	text-align: center;
+	min-width: 120px;
+
+	@media (max-width: 640px) { min-width: unset; }
+}
+
+.fasting-label {
+	display: block;
+	font-weight: 600;
+	color: var(--dark-text);
+	margin-bottom: 8px;
+}
+
+.fasting-status {
+	display: inline-block;
+	padding: 8px 16px;
+	border-radius: 20px;
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+.fasting-status.strict { background: #dc3545; color: white; }
+.fasting-status.oil { background: #fd7e14; color: white; }
+.fasting-status.fish { background: #20c997; color: white; }
+.fasting-status.no-meat { background: #6f42c1; color: white; }
+.fasting-status.no-fast { background: #28a745; color: white; }

@@ -1,0 +1,123 @@
+<!-- <p>post-form works!</p> -->
+        <!-- <div class="article-details">
+          <div class="category-date">
+            <select class="category-dropdown" id="categorySelect">
+              <option value="blog">Блогови</option>
+              <option value="nastani">Настани</option>
+              <option value="novosti">Новости</option>
+              <option value="katehizis">Катехизис</option>
+              <option value="galerija">Галерија</option>
+            </select>
+            <input
+              type="date"
+              class="article-date-input"
+              id="articleDate"
+              value=""
+            />
+          </div>
+          <h1
+            class="article-title"
+            contenteditable="true"
+            data-placeholder="Внесете наслов на статијата..."
+          ></h1>
+          <div class="author">
+            <div class="author-image">
+              <img src="assets/author.svg" alt="Author" />
+            </div>
+            <div
+              class="author-name"
+              contenteditable="true"
+              data-placeholder="Име на автор"
+            >
+              Отец Прохор
+            </div>
+          </div>
+        </div>
+
+        Article Content
+        <div class="article-content">
+          <div class="article-image"></div>
+          <div
+            class="article-text"
+            contenteditable="true"
+            placeholder="Започнете да пишувате ја содржината на статијата овде..."
+          ></div>
+        </div> -->
+
+
+<form [formGroup]="form" class="article-container">
+
+   <div class="back-button">
+     <img src="/assets/content-assets/back-arrow.svg" alt="back-button">
+     <a routerLink="/admin/posts" class="back-link">Назад</a>
+   </div>
+
+   <article class="article-details">
+
+     <!-- Category row (styled like the category pill from content-details-page) -->
+     <div class="category-date">
+       <select formControlName="categoryName" class="category-select">
+         <option value="" disabled>Избери категорија</option>
+         @for (cat of categories; track cat.name) {
+           <option [value]="cat.name">{{ cat.label }}</option>
+         }
+       </select>
+       <mat-form-field appearance="outline" class="date-field">
+         <mat-label>Датум на објавување</mat-label>
+         <input matInput [matDatepicker]="picker" formControlName="publishedAt" />
+         <mat-datepicker-toggle matIconSuffix [for]="picker" />
+         <mat-datepicker #picker />
+       </mat-form-field>
+     </div>
+
+     <!-- Title (styled like the h1 in content-details-page) -->
+     <input
+       formControlName="title"
+       type="text"
+       class="article-title title-input"
+       placeholder="Внесете наслов на статијата..."
+     />
+
+     <!-- Author row (static — derived from JWT on the server) -->
+     <div class="author">
+       <div class="author-image">
+         <img src="assets/content-assets/author.svg" alt="Author image">
+       </div>
+       <div class="author-name">отец Прохор Зец</div>
+     </div>
+
+     <!-- Image URL -->
+     <div class="image-url-row">
+       <input
+         formControlName="imageUrl"
+         type="url"
+         class="image-url-input"
+         placeholder="URL на слика..."
+       />
+     </div>
+
+     <!-- Rich Text Content (ngx-editor replaces the article-text div) -->
+     <div class="article-content">
+       <div class="editor-wrapper">
+         <ngx-editor-menu [editor]="editor" [toolbar]="toolbar" />
+         <ngx-editor
+           formControlName="content"
+           [editor]="editor"
+           placeholder="Започнете да пишувате ја содржината на статијата овде..."
+         />
+       </div>
+     </div>
+
+   </article>
+
+   <!-- Action bar -->
+   <div class="action-bar">
+     <button type="button" class="btn-draft" (click)="saveDraft()">
+       Зачувај нацрт
+     </button>
+     <button type="button" class="btn-publish" (click)="publish()">
+       Објави
+     </button>
+   </div>
+
+ </form>

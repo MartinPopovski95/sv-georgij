@@ -1,0 +1,35 @@
+.church-section {
+    margin: 80px 0 0 0;
+    padding: 0;
+    position: relative;
+    min-height: 700px;
+    overflow: hidden;
+
+    @media (max-width: 1024px) { min-height: unset; margin: 40px 0 0; }
+}
+
+.church-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Two-column church layout */
+.church-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    min-height: 700px;
+    padding: 80px 40px;
+    position: relative;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        min-height: unset;
+        padding: 60px 24px;
+        gap: 40px;
+    }
+
+    @media (max-width: 640px) { padding: 40px 16px; }
+}
+

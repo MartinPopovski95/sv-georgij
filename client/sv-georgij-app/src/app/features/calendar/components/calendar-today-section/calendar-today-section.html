@@ -1,0 +1,20 @@
+<div class="calendar-container">
+  <div class="today-section">
+    <div class="today-card">
+      <div class="today-date">
+        <div class="day-name">{{ todayDayName() }}</div>
+        <div class="date-number">{{ todayDay() }}</div>
+        <div class="month-year">{{ todayMonthYear() }}</div>
+        <div class="julian-date">{{ todayJulianDate() }}</div>
+      </div>
+      <div class="today-saints">
+        <h3>Светци</h3>
+        <div class="saint-item">{{ todaySaints() }}</div>
+      </div>
+      <div class="today-fasting">
+        <span class="fasting-label">Пост:</span>
+        <span class="fasting-status" [class]="todayTypikonClass()">{{ todayTypikon() }}</span>
+      </div>
+    </div>
+  </div>
+</div>

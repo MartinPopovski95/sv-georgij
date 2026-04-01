@@ -1,0 +1,79 @@
+.add-new-post-card {
+    background: #F5F5DC;
+    /* Light beige background to match other cards */
+    border: 2px dashed #8B4513;
+    /* Dark brown dashed border */
+    border-radius: 0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: 560.84px;
+    min-height: 560.84px;
+    max-height: 560.84px;
+    box-sizing: border-box;
+
+    @media (max-width: 640px) { height: auto; min-height: unset; max-height: unset; }
+}
+
+.add-new-post-card:hover {
+    background: #F0F0DC;
+    /* Slightly darker beige on hover */
+    border-color: #A0522D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+.add-post-content {
+    text-align: center;
+    padding: 40px;
+}
+
+.add-post-icon {
+    font-size: 3.5rem;
+    color: #8B4513;
+    /* Dark brown */
+    margin-bottom: 20px;
+    font-weight: 300;
+    line-height: 1;
+    transition: all 0.3s ease;
+
+    @media (max-width: 640px) { font-size: 2.5rem; }
+}
+
+.add-new-post-card:hover .add-post-icon {
+    transform: scale(1.05);
+    color: #5D4037;
+}
+
+.add-post-title {
+    font-size: 1.4rem;
+    color: #2F1B14;
+    /* Dark brown/black for readability */
+    margin-bottom: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.add-new-post-card:hover .add-post-title {
+    color: #1A0F0A;
+}
+
+.add-post-description {
+    font-size: 0.95rem;
+    color: #5D4037;
+    /* Medium brown for description */
+    line-height: 1.5;
+    transition: all 0.3s ease;
+}
+
+.add-new-post-card:hover .add-post-description {
+    color: #4A2C20;
+}

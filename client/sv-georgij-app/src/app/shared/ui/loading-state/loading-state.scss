@@ -1,0 +1,42 @@
+:host {
+  display: contents;
+}
+
+.loading-message {
+  text-align: center;
+  padding: 60px 30px;
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(249, 245, 235, 0.08) 0%, rgba(188, 108, 37, 0.05) 100%);
+  border: 2px solid rgba(188, 108, 37, 0.2);
+  border-radius: 20px;
+  margin: 20px 0;
+  backdrop-filter: blur(8px);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--primary-color) 50%, transparent 100%);
+    opacity: 0.6;
+  }
+
+  p {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-shadow: 0px 2px 8px rgba(188, 108, 37, 0.3);
+  }
+
+  mat-spinner {
+    margin: 0 auto 16px;
+
+    ::ng-deep .mdc-circular-progress__indeterminate-circle-graphic {
+      stroke: var(--primary-color);
+    }
+  }
+}

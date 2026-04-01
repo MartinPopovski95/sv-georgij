@@ -1,0 +1,291 @@
+.admin-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--background-color) 0%, #2a4241 50%, #1e2d2b 100%);
+    position: relative;
+    padding: 10px;
+    gap: 20px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Background Pattern Overlay */
+.admin-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(188, 108, 37, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(188, 108, 37, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Login Section - Left Side */
+.login-section {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    max-height: calc(100vh - 20px);
+    overflow-y: auto;
+}
+
+/* Welcome Header */
+.welcome-header {
+    margin-bottom: 32px;
+    animation: fadeInUp 0.8s ease-out;
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+}
+
+.welcome-title {
+    font-size: 42px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-title .emoji {
+    font-size: 46px;
+    animation: wave 2s ease-in-out infinite;
+}
+
+.welcome-subtitle {
+    font-size: 18px;
+    color: var(--text-color);
+    opacity: 0.85;
+    line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Form */
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Messages */
+.error-message,
+.success-message {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+.error-message {
+    background: rgba(220, 53, 69, 0.12);
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    color: #ffd7dc;
+}
+
+.success-message {
+    background: rgba(25, 135, 84, 0.12);
+    border: 1px solid rgba(25, 135, 84, 0.3);
+    color: #d8ffea;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 22px;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Inputs */
+.form-input {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(249, 245, 235, 0.95);
+    color: var(--dark-text);
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid transparent;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    outline: none;
+    background: var(--text-color);
+    box-shadow:
+        0 0 0 3px rgba(188, 108, 37, 0.3),
+        0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+}
+
+.form-input:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-input::placeholder {
+    color: rgba(40, 61, 59, 0.6);
+    font-style: italic;
+}
+
+/* Sign In Button */
+.sign-in-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #97501E 100%);
+    color: white;
+    border: none;
+    padding: 18px 24px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 10px 0 0;
+    box-shadow:
+        0 4px 15px rgba(188, 108, 37, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.sign-in-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.sign-in-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #D4953A 0%, #A35D1F 100%);
+    transform: translateY(-2px);
+    box-shadow:
+        0 6px 20px rgba(188, 108, 37, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.sign-in-btn:hover:not(:disabled)::before {
+    left: 100%;
+}
+
+.sign-in-btn:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow:
+        0 2px 8px rgba(188, 108, 37, 0.3),
+        0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.sign-in-btn:disabled {
+    background: linear-gradient(135deg, #999 0%, #666 100%);
+    cursor: not-allowed;
+    opacity: 0.8;
+    transform: none;
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Section - Right Side */
+.image-section {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    max-height: calc(100vh - 20px);
+
+    @media (max-width: 1024px) { display: none; }
+}
+
+/* Church Image */
+.church-image {
+    width: 100%;
+    max-width: 500px;
+    height: calc(100vh - 60px);
+    max-height: 600px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 20px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 8px 24px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.church-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        45deg,
+        rgba(188, 108, 37, 0.1) 0%,
+        transparent 30%,
+        transparent 70%,
+        rgba(188, 108, 37, 0.05) 100%
+    );
+    border-radius: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.church-image:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.4),
+        0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.church-image:hover::before {
+    opacity: 0.7;
+}
+
+/* Loading State */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}

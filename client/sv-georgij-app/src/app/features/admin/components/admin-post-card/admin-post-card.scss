@@ -1,0 +1,45 @@
+// Admin-specific additions only — base card styles live in styles.scss
+
+.status-badge {
+  position: absolute;
+  top: 12px; right: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 10;
+  pointer-events: none;
+}
+.status-badge.published { background: #2e7d32; color: #fff; }
+.status-badge.draft     { background: #f59e0b; color: #2F1B14; }
+
+.admin-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex; align-items: center;
+  justify-content: center; gap: 16px;
+  opacity: 0; transition: opacity 0.2s ease; z-index: 5;
+}
+.blog-card:hover .admin-overlay { opacity: 1; }
+
+.action-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 20px; border-radius: 8px;
+  font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; border: none;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.action-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.action-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.edit-btn   { background: #8B4513; color: #fff; }
+.delete-btn { background: #c62828; color: #fff; }
+
+@media (max-width: 640px) {
+  .admin-overlay { opacity: 1; }
+}

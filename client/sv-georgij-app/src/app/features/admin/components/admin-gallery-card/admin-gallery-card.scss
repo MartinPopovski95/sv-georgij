@@ -1,0 +1,127 @@
+.blog-card {
+  background: #F5F5DC;
+  border: 2px solid #D2B48C;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 560.84px;
+  min-height: 560.84px;
+  max-height: 560.84px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.card-image {
+  width: 100%;
+  position: relative;
+  flex-shrink: 0;
+  border-bottom: 2px solid #D2B48C;
+}
+
+.gallery-card {
+  cursor: default;
+  transition: none;
+}
+
+.gallery-card:hover {
+  transform: none !important;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.gallery-card .card-image,
+.gallery-card .gallery-second-image {
+  overflow: hidden;
+}
+
+.gallery-card .card-image-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.35s ease;
+}
+
+.gallery-card.single-image .card-image {
+  height: 100% !important;
+  min-height: 100% !important;
+  border-bottom: none !important;
+}
+
+.gallery-card.card-type-1 .card-image {
+  height: 45%;
+}
+
+.gallery-card.card-type-2 .card-image {
+  height: 55%;
+}
+
+.gallery-card.card-type-1 .card-content {
+  height: 55%;
+  padding: 0;
+}
+
+.gallery-card.card-type-2 .card-content {
+  height: 45%;
+  padding: 0;
+}
+
+.gallery-second-image {
+  padding: 0 !important;
+  position: relative;
+  display: block !important;
+}
+
+/* Admin overlay — per-image hover */
+.admin-image-wrapper {
+  position: relative;
+
+  &:hover .card-image-img {
+    filter: brightness(0.7);
+  }
+
+  &:hover .admin-image-overlay {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.admin-image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 5;
+}
+
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: #c62828;
+  color: #fff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  pointer-events: all;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+}

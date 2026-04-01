@@ -1,0 +1,15 @@
+<!-- <p>content-grid works!</p> -->
+
+<section>
+    <div class="blog-grid" id="blogGrid">
+        @for (post of posts(); track post.id; let i = $index) {
+            <app-content-card [post]="post" [index]="i" />
+        } @empty {
+            @if (isLoading()) {
+                <app-loading-state message="Се вчитуваат блог постовите..." />
+            } @else {
+                <app-empty-state title="Нема постови" message="Сè уште нема содржина во оваа категорија." />
+            }
+        }
+    </div>
+</section>

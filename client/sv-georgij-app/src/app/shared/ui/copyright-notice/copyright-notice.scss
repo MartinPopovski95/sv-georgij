@@ -1,0 +1,22 @@
+.copyright-notice {
+  background: #97511D;
+  color: var(--light-text);
+  text-align: center;
+  padding: 8px 20px;
+  font-size: 10px;
+  line-height: 1.4;
+  font-family: 'Ponomar', 'Times New Roman', 'DejaVu Serif', Georgia, serif;
+  border-top: 1px solid rgba(249, 245, 235, 0.1);
+  opacity: 0.9;
+}
+
+.copyright-notice a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.copyright-notice a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}

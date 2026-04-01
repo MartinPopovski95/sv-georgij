@@ -1,0 +1,12 @@
+<div class="months-aside">
+  <h2 class="aside-title">Месеци</h2>
+  <ul class="months-list">
+    @for (month of months; track month; let i = $index) {
+      <li class="month-item"
+          [ngClass]="{ active: i === currentMonthIndex() }"
+          (click)="selectMonth(i)">
+        {{ month }}
+      </li>
+    }
+  </ul>
+</div>

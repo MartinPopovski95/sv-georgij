@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1 class="page-title">Галерија</h1>
+</div>
+
+<div class="gallery-grid">
+  <div class="upload-card" (click)="fileInput.click()">
+    @if (isUploading()) {
+      <div class="upload-content">
+        <div class="upload-icon">...</div>
+        <p class="upload-title">Се прикачува...</p>
+      </div>
+    } @else {
+      <div class="upload-content">
+        <div class="upload-icon">+</div>
+        <h3 class="upload-title">Додај слика</h3>
+        <p class="upload-description">Кликни за да прикачиш нова слика</p>
+      </div>
+    }
+    <input #fileInput type="file" accept="image/*" hidden (change)="onFileSelected($event)" />
+  </div>
+
+  @for (pair of pairs(); track pair[0].id; let i = $index) {
+    <app-admin-gallery-card
+      [firstItem]="pair[0]"
+      [secondItem]="pair[1]"
+      [index]="i"
+      (deleteRequested)="onDelete($event)"
+    />
+  }
+</div>

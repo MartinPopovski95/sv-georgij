@@ -1,0 +1,43 @@
+ .page-header {
+   display: flex;
+   align-items: center;
+   height: 60px;
+   padding: 0 30px;
+   background: #8B4513;
+   margin-bottom: 0;
+ }
+
+ .page-title {
+   font-size: 1.5rem;
+   color: #fff;
+   font-weight: 700;
+   margin: 0;
+   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+ }
+
+ .posts-grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 0;
+   max-width: 1400px;
+   width: 100%;
+   margin: 0 auto;
+   box-sizing: border-box;
+   min-height: 560.84px;
+   overflow: visible;
+
+   @media (max-width: 1024px) { grid-template-columns: repeat(2, 1fr); }
+   @media (max-width: 640px)  { grid-template-columns: 1fr; }
+ }
+
+ .empty-state {
+   grid-column: 2 / -1; // leave column 1 for the create card
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: rgba(249, 245, 235, 0.7);
+   font-size: 1.1rem;
+   padding: 40px;
+
+   @media (max-width: 640px) { grid-column: 1 / -1; }
+ }

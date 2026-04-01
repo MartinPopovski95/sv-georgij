@@ -1,0 +1,50 @@
+<section class="calendar-month">
+  <div class="calendar-header">
+    <h2>{{ monthTitle() }} <span class="old-month-name">({{ oldMonthName() }})</span></h2>
+    <span>{{ daysInMonth() }} дена</span>
+  </div>
+
+  <div class="calendar-table-wrapper">
+    <table class="calendar-table">
+      <thead>
+        <tr>
+          <th>Ден</th>
+          <th>Нов</th>
+          <th>Стар</th>
+          <th>Светец</th>
+          <th>Типик</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (item of calendarDays(); track item.day) {
+          @if (item.notes?.length) {
+            <tr class="week-note-row">
+              <td colspan="5">
+                <div class="week-note">{{ item.notes![0] }}</div>
+                @if (item.notes!.length > 1) {
+                  <div class="readings">{{ item.notes![1] }}</div>
+                }
+              </td>
+            </tr>
+          }
+          <tr [class.sunday]="item.isSunday" [class.today]="item.isToday">
+            <td class="weekday">{{ item.weekday }}</td>
+            <td class="day">{{ item.day }}</td>
+            <td class="old-day">{{ item.oldStyleDay }}</td>
+            <td class="saints">{{ item.saints }}</td>
+            <td class="typikon">
+              <div class="typikon-inner">
+                @let cls = typikonClass(item.typikon);
+                @if (cls) {
+                  <span class="typikon-dot" [class]="cls"></span>
+                }
+                {{ item.typikon }}
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

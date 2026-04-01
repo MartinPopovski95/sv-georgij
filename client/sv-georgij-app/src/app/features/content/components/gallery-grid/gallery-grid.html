@@ -1,0 +1,13 @@
+ <section>
+   <div class="blog-grid" id="blogGrid">
+     @for (pair of pairs(); track pair[0].id; let i = $index) {
+       <app-gallery-card [firstItem]="pair[0]" [secondItem]="pair[1]" [index]="i" />
+     } @empty {
+       @if (isLoading()) {
+         <app-loading-state message="Сликите се вчитуваат..." />
+       } @else {
+         <app-empty-state title="Нема слики" message="Сè уште нема слики во галеријата." />
+       }
+     }
+   </div>
+ </section>

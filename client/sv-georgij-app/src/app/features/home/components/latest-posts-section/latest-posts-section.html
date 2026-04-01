@@ -1,0 +1,33 @@
+<section class="latest-posts-section">
+  <div class="content-nav-bar">
+    @for (tab of tabs; track tab.key) {
+      <div class="content-nav-section" [class.active]="activeTab() === tab.key" (click)="setTab(tab.key)">
+        <span>{{ tab.label }}</span>
+      </div>
+    }
+  </div>
+
+  <div class="posts-grid">
+    @if (activeTab() !== 'Gallery') {
+      @for (post of displayedPosts(); track post.id; let i = $index) {
+        <app-content-card [post]="post" [index]="i" />
+      } @empty {
+        @if (isPostsLoading()) {
+          <app-loading-state message="Постовите се вчитуваат..." />
+        } @else {
+          <app-empty-state title="Нема постови" message="Нема постови во оваа категорија." />
+        }
+      }
+    } @else {
+      @for (pair of displayedGalleryPairs(); track pair[0].id; let i = $index) {
+        <app-gallery-card [firstItem]="pair[0]" [secondItem]="pair[1]" [index]="i" />
+      } @empty {
+        @if (isGalleryLoading()) {
+          <app-loading-state message="Сликите се вчитуваат..." />
+        } @else {
+          <app-empty-state title="Нема слики" message="Сè уште нема слики во галеријата." />
+        }
+      }
+    }
+  </div>
+</section>

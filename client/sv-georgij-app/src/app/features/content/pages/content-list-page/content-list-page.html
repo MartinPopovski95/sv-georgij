@@ -1,0 +1,10 @@
+<!-- <p>content-list-page works!</p> -->
+ <div class="blog-header-bar">
+     <div class="blog-title-section">
+        <h1 class="blog-title">{{ title() | categoryLabel }}</h1>
+     </div>
+
+     <div class="blog-search-section"></div>
+
+    </div>
+    <app-content-grid [posts]="posts()" [isLoading]="isLoading()" />

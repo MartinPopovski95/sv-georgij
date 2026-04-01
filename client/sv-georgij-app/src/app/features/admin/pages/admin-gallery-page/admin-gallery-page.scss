@@ -1,0 +1,106 @@
+.page-header {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 30px;
+  background: #8B4513;
+  margin-bottom: 0;
+
+  @media (max-width: 640px) { padding: 0 16px; }
+}
+
+.page-title {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  min-height: 560.84px;
+  overflow: visible;
+
+  @media (max-width: 1024px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 640px)  { grid-template-columns: 1fr; }
+}
+
+.upload-card {
+  background: #F5F5DC;
+  border: 2px dashed #8B4513;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 560.84px;
+  min-height: 560.84px;
+  max-height: 560.84px;
+  box-sizing: border-box;
+
+  @media (max-width: 640px) { height: auto; min-height: unset; max-height: unset; }
+
+  &:hover {
+    background: #F0F0DC;
+    border-color: #A0522D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+  }
+}
+
+.upload-content {
+  text-align: center;
+  padding: 40px;
+
+  @media (max-width: 640px) { padding: 24px; }
+}
+
+.upload-icon {
+  font-size: 3.5rem;
+  color: #8B4513;
+  margin-bottom: 20px;
+  font-weight: 300;
+  line-height: 1;
+  transition: all 0.3s ease;
+
+  @media (max-width: 640px) { font-size: 2.5rem; }
+
+  .upload-card:hover & {
+    transform: scale(1.05);
+    color: #5D4037;
+  }
+}
+
+.upload-title {
+  font-size: 1.4rem;
+  color: #2F1B14;
+  margin-bottom: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  .upload-card:hover & {
+    color: #1A0F0A;
+  }
+}
+
+.upload-description {
+  font-size: 0.95rem;
+  color: #5D4037;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+
+  .upload-card:hover & {
+    color: #4A2C20;
+  }
+}

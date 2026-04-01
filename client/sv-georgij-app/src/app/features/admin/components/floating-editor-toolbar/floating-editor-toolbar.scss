@@ -1,0 +1,107 @@
+.floating-toolbar {
+	position: fixed;
+	background: white;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	padding: 8px;
+	display: none;
+	z-index: 999;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	backdrop-filter: blur(10px);
+	gap: 8px;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	width: 713px;
+	min-width: 452px;
+	max-width: 787px;
+	height: auto;
+	min-height: fit-content;
+	max-height: max-content;
+	resize: both;
+	overflow: auto;
+	cursor: move;
+
+	@media (max-width: 1024px) { width: 90vw; min-width: unset; max-width: 90vw; }
+	@media (max-width: 640px)  { width: 100%; max-width: 100%; }
+}
+
+.floating-toolbar.visible {
+	display: flex;
+}
+
+.toolbar-section {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 4px;
+	align-items: center;
+	flex-shrink: 0;
+	white-space: nowrap;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	padding: 2px;
+}
+
+.float-btn {
+	background: transparent;
+	border: none;
+	padding: 8px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 14px;
+	transition: all 0.2s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 32px;
+	height: 32px;
+	color: var(--dark-text);
+	flex-shrink: 0;
+}
+
+.float-btn:hover {
+	background: rgba(40, 61, 59, 0.1);
+}
+
+.float-btn.active {
+	background: var(--primary-color);
+	color: var(--text-color);
+}
+
+.float-btn:disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+.float-btn strong,
+.float-btn em,
+.float-btn u {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.align-icon {
+	font-family: monospace;
+	font-size: 16px;
+	transform: rotate(0deg);
+}
+
+.float-btn[data-command="justifyCenter"] .align-icon {
+	text-align: center;
+}
+
+.float-btn[data-command="justifyRight"] .align-icon {
+	text-align: right;
+}
+
+.float-btn[data-command="justifyFull"] .align-icon {
+	letter-spacing: 2px;
+}
+
+.toolbar-separator {
+	width: 1px;
+	height: 24px;
+	background: #e0e0e0;
+	margin: 0 8px;
+	flex-shrink: 0;
+}

@@ -1,0 +1,18 @@
+<div class="page-header">
+   <h1 class="page-title">{{ category() | categoryLabel }}</h1>
+ </div>
+
+ <div class="posts-grid">
+   <app-create-new-post-card [category]="category()" />
+   @for (post of posts(); track post.id; let i = $index) {
+     <app-admin-post-card
+       [post]="post"
+       [index]="i"
+       (delete)="onDelete($event)"
+     />
+   } @empty {
+     <div class="empty-state">
+       <p>Нема постови во оваа категорија.</p>
+     </div>
+   }
+ </div>

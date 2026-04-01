@@ -1,0 +1,105 @@
+<header>
+    <a routerLink="/" class="logo-wrapper" (click)="closeAll()">
+        <div class="logo"></div>
+        <div class="logo-text">Св. Георгиј - Старо Нагоричане</div>
+    </a>
+
+    <button
+      type="button"
+      class="burger-btn"
+      [class.burger-btn--open]="menuOpen()"
+      aria-label="Отвори мени"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobile-nav"
+      (click)="toggleMenu()">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </button>
+
+    <nav class="nav">
+        <ul class="navbar-links">
+            <li>
+                <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link" (click)="closeAll()">Дома</a>
+            </li>
+
+            <li class="dropdown" [class.dropdown--open]="dropdownOpen()">
+                @if(dropdownOpen()) {
+                    <button
+                        type="button"
+                        class="dropdown_backdrop"
+                        aria-label="Close menu"
+                        (click)="dropdownOpen.set(false)">
+                    </button>
+                }
+
+                <button
+                    type="button"
+                    class="nav-link dropdown-toggle"
+                    aria-haspopup="true"
+                    [attr.aria-expanded] = "dropdownOpen()"
+                    aria-controls="content-menu"
+                    (click)="toggleDropdown()">
+                    Содржини <span class="dropdown-arrow">▼</span>
+                </button>
+
+                <div class="dropdown-menu" id="content-menu">
+                    <a routerLink="/blog" routerLinkActive="active" class="dropdown-item" (click)="closeAll()">Блог</a>
+                    <a routerLink="/nastani" routerLinkActive="active" class="dropdown-item" (click)="closeAll()">Настани</a>
+                    <a routerLink="/novosti" routerLinkActive="active" class="dropdown-item" (click)="closeAll()">Новости</a>
+                    <a routerLink="/katehizis" routerLinkActive="active" class="dropdown-item" (click)="closeAll()">Катехизис</a>
+                    <a routerLink="/galerija" routerLinkActive="active" class="dropdown-item" (click)="closeAll()">Галерија</a>
+                </div>
+            </li>
+
+            <li>
+                <a routerLink="/about" routerLinkActive="active" class="nav-link" (click)="closeAll()">За нас</a>
+            </li>
+
+            <li>
+                <a routerLink="/calendar" routerLinkActive="active" class="nav-link" (click)="closeAll()">Православен календар</a>
+            </li>
+        </ul>
+
+        <a
+            class="btn-primary"
+            href="https://maps.google.com"
+            target="_blank"
+            rel="noopener noreferrer">
+            Локација
+        </a>
+    </nav>
+</header>
+
+@if (menuOpen()) {
+  <div class="nav-overlay" role="dialog" aria-modal="true" aria-label="Навигација" id="mobile-nav">
+    <div class="nav-backdrop" (click)="closeAll()"></div>
+    <nav class="nav-drawer">
+      <button
+        type="button"
+        class="drawer-close-btn"
+        aria-label="Затвори мени"
+        (click)="closeAll()">
+        &#x2715;
+      </button>
+      <ul class="mobile-nav-links">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="mobile-nav-link" (click)="closeAll()">Дома</a></li>
+        <li><a routerLink="/blog" routerLinkActive="active" class="mobile-nav-link" (click)="closeAll()">Блог</a></li>
+        <li><a routerLink="/nastani" routerLinkActive="active" class="mobile-nav-link" (click)="closeAll()">Настани</a></li>
+        <li><a routerLink="/novosti" routerLinkActive="active" class="mobile-nav-link" (click)="closeAll()">Новости</a></li>
+        <li><a routerLink="/katehizis" routerLinkActive="active" class="mobile-nav-link" (click)="closeAll()">Катехизис</a></li>
+        <li><a routerLink="/galerija" routerLinkActive="active" class="mobile-nav-link" (click)="closeAll()">Галерија</a></li>
+        <li><a routerLink="/about" routerLinkActive="active" class="mobile-nav-link" (click)="closeAll()">За нас</a></li>
+        <li><a routerLink="/calendar" routerLinkActive="active" class="mobile-nav-link" (click)="closeAll()">Православен календар</a></li>
+      </ul>
+      <a
+        class="btn-primary mobile-location-btn"
+        href="https://maps.google.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        (click)="closeAll()">
+        Локација
+      </a>
+    </nav>
+  </div>
+}

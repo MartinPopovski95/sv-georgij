@@ -1,0 +1,308 @@
+/* Right: Calendar Section */
+.calendar-section {
+    flex: 0 0 45%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @media (max-width: 1024px) { flex: unset; width: 100%; max-width: 100%; }
+}
+
+.calendar-background {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+}
+
+
+.orthodox-calendar {
+    border: none;
+    border-radius: 0;
+    padding: 100px 40px 80px 40px;
+    max-width: 480px;
+    width: 480px;
+    min-height: 880px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    @media (max-width: 1024px) { width: 100%; max-width: 100%; }
+}
+
+/* Calendar background positioned behind content but visible */
+.orthodox-calendar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/assets/homepage-assets/Calendar-background-new.png');
+    background-size: 101% 104%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 1;
+}
+
+/* Calendar content above background */
+.orthodox-calendar > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Position calendar content centered within background image */
+.orthodox-calendar .liturgical-info-header,
+.orthodox-calendar .saints-section,
+.orthodox-calendar .fasting-section,
+.orthodox-calendar .scripture-section {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.orthodox-calendar .saints-title,
+.orthodox-calendar .scripture-title {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.orthodox-calendar .saint-item {
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.orthodox-calendar .calendar-header {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.orthodox-calendar .calendar-navigation {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+
+.calendar-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(93, 64, 55, 0.2);
+}
+
+.calendar-header h2 {
+    font-size: 26px;
+    color: #5D4037;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.current-date {
+    font-size: 16px;
+    color: #5D4037;
+    font-weight: 600;
+    background: rgba(93, 64, 55, 0.1);
+    padding: 6px 14px;
+    border-radius: 15px;
+    display: inline-block;
+    border: 1px solid rgba(93, 64, 55, 0.2);
+}
+
+.saint-of-day {
+    margin-bottom: 25px;
+    padding: 18px;
+    background: rgba(93, 64, 55, 0.08);
+    border-radius: 8px;
+    border: 1px solid rgba(93, 64, 55, 0.15);
+    transition: all 0.3s ease;
+}
+
+.saint-of-day:hover {
+    background: rgba(93, 64, 55, 0.12);
+    border-color: rgba(93, 64, 55, 0.25);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.saint-title {
+    font-size: 14px;
+    color: #5D4037;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.saint-name {
+    font-size: 20px;
+    color: #3E2723;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.saint-description {
+    font-size: 14px;
+    color: #5D4037;
+    line-height: 1.4;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.liturgical-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.fasting-period,
+.liturgical-color {
+    padding: 12px;
+    background: rgba(93, 64, 55, 0.08);
+    border-radius: 6px;
+    border: 1px solid rgba(93, 64, 55, 0.15);
+    transition: all 0.3s ease;
+}
+
+.fasting-period:hover,
+.liturgical-color:hover {
+    background: rgba(93, 64, 55, 0.12);
+    border-color: rgba(93, 64, 55, 0.25);
+    transform: translateY(-1px);
+}
+
+.fasting-label,
+.color-label {
+    display: block;
+    font-size: 12px;
+    color: #5D4037;
+    font-weight: 700;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.fasting-status,
+.color-value {
+    display: block;
+    font-size: 14px;
+    color: #3E2723;
+    font-weight: 600;
+}
+
+/* Liturgical color indicator */
+.liturgical-color {
+    position: relative;
+}
+
+.liturgical-color::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid #5D4037;
+}
+
+
+.calendar-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.nav-btn {
+    background: rgba(93, 64, 55, 0.1);
+    border: 1px solid rgba(93, 64, 55, 0.3);
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #5D4037;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+        background: rgba(93, 64, 55, 0.2);
+        border-color: rgba(93, 64, 55, 0.5);
+        transform: translateY(-1px);
+    }
+    &:active { transform: translateY(0); }
+}
+
+.nav-today-btn {
+    background: rgba(188, 108, 37, 0.1);
+    border: 1px solid rgba(188, 108, 37, 0.3);
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #BC6C25;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &.active { background: rgba(188, 108, 37, 0.2); }
+    &:hover {
+        background: rgba(188, 108, 37, 0.2);
+        border-color: rgba(188, 108, 37, 0.5);
+        transform: translateY(-1px);
+    }
+    &:active { transform: translateY(0); }
+    font-family: inherit;
+}
+
+.old-calendar-date {
+    display: block;
+    font-size: 13px;
+    color: #795548;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.saints-section {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    background: rgba(93, 64, 55, 0.08);
+    border-radius: 8px;
+    border: 1px solid rgba(93, 64, 55, 0.15);
+}
+
+.saints-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #5D4037;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 8px;
+}
+
+.saint-item {
+    font-size: 15px;
+    color: #3E2723;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.fasting-section {
+    padding: 12px 16px;
+    background: rgba(93, 64, 55, 0.08);
+    border-radius: 8px;
+    border: 1px solid rgba(93, 64, 55, 0.15);
+}

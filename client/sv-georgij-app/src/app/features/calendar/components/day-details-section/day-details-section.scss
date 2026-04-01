@@ -1,0 +1,119 @@
+.calendar-month {
+  background: rgba(249, 245, 235, 0.95);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(188, 108, 37, 0.2);
+  margin-top: 24px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(188, 108, 37, 0.3);
+
+  h2 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin: 0;
+    font-weight: 600;
+  }
+
+  span {
+    font-size: 0.9rem;
+    color: var(--dark-text);
+    opacity: 0.7;
+  }
+}
+
+.calendar-table-wrapper {
+  overflow-x: auto;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+
+  thead tr {
+    background: rgba(188, 108, 37, 0.1);
+  }
+
+  th {
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--primary-color);
+    border-bottom: 2px solid rgba(188, 108, 37, 0.3);
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 8px 12px;
+    color: var(--dark-text);
+    border-bottom: 1px solid rgba(188, 108, 37, 0.1);
+    vertical-align: top;
+  }
+
+  tbody tr:hover td {
+    background: rgba(188, 108, 37, 0.05);
+  }
+
+  .weekday { font-weight: 600; white-space: nowrap; min-width: 40px; }
+  .day, .old-day { text-align: center; font-weight: 600; min-width: 36px; }
+  .saints { min-width: 200px; }
+  .typikon { min-width: 80px; white-space: nowrap; }
+  .typikon-inner { display: flex; align-items: center; gap: 6px; }
+}
+
+.typikon-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  &.strict  { background: #dc3545; }
+  &.oil     { background: #fd7e14; }
+  &.fish    { background: #20c997; }
+  &.no-meat { background: #6f42c1; }
+}
+
+.old-month-name {
+  font-size: 0.9rem;
+  opacity: 0.65;
+  font-weight: 400;
+}
+
+tr.sunday td {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+tr.today td {
+  background: rgba(188, 108, 37, 0.12);
+}
+
+.week-note-row td {
+  padding: 6px 12px 2px;
+  background: transparent;
+  text-align: center;
+
+  .week-note {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .readings {
+    font-size: 0.8rem;
+    color: var(--dark-text);
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+}

@@ -1,0 +1,7 @@
+ <div class="blog-header-bar">
+   <div class="blog-title-section">
+     <h1 class="blog-title">{{ title() | categoryLabel }}</h1>
+   </div>
+   <div class="blog-search-section"></div>
+ </div>
+ <app-gallery-grid [galleryItem]="galleryItem()" [isLoading]="isLoading()" />

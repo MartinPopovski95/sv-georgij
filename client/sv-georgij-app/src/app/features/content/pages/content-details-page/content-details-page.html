@@ -1,0 +1,52 @@
+<!-- <p>content-details-page works!</p> -->
+
+<main class="article-container">
+    <div class="back-button">
+        <img src="/assets/content-assets/back-arrow.svg" alt="back-button">
+        <a routerLink="../" class="back-link">Назад</a>
+    </div>
+
+    <article class="article-details">
+        <div class="category-date">
+            <span class="category-tag">{{ contentItem().categoryName | categoryLabel }}</span>
+            <span class="article-date">{{ contentItem().publishedAt | localeDate }}</span>
+        </div>
+        
+        <h1 class="article-title">{{ contentItem().title }}</h1>
+
+        <div class="author">
+            <div class="author-image">
+                <img src="assets/content-assets/author.svg" alt="Author image">
+            </div>
+            <div class="author-name">{{ contentItem().author }}</div>
+        </div>
+
+        <div class="share-row" aria-label="Сподели">
+            <span class="share-label">Сподели на:</span>
+            <a class="share-icon facebook" [href]="facebookShareUrl()" target="_blank" rel="noopener" aria-label="Фејсбук">
+                <span class="share-text">Фејсбук</span>
+            </a>
+            <a class="share-icon twitter" [href]="twitterShareUrl()" target="_blank" rel="noopener" aria-label="Твитер">
+                <span class="share-text">Твитер</span>
+            </a>
+            <a class="share-icon viber" [href]="viberShareUrl()" target="_blank" rel="noopener" aria-label="Вибер">
+                <span class="share-text">Вибер</span>
+            </a>
+            <a class="share-icon whatsapp" [href]="whatsappShareUrl()" target="_blank" rel="noopener" aria-label="Ватсап">
+                <span class="share-text">Ватсап</span>
+            </a>
+            <a class="share-icon telegram" [href]="telegramShareUrl()" target="_blank" rel="noopener" aria-label="Телеграм">
+                <span class="share-text">Телеграм</span>
+            </a>
+        </div>
+
+        <div class="article-content">
+            @if (contentItem().imageUrl) {
+                <div class="article-image">
+                    <img [src]="contentItem().imageUrl" [alt]="contentItem().title">
+                </div>
+            }
+            <div class="article-text" [innerHTML]="safeContent()"></div>
+        </div>
+    </article>
+</main>
