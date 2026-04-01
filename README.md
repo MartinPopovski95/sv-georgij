@@ -1,4 +1,4 @@
-# Св. Георгиј - Staro Nagorichane
+# Св. Георгиј - Старо Нагоричане
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-svgeorgij.mk-brightgreen?style=flat-square&logo=google-chrome)](https://svgeorgij.mk)
 [![Angular](https://img.shields.io/badge/Angular-20-DD0031?style=flat-square&logo=angular)](https://angular.dev)
