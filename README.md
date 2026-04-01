@@ -1,4 +1,4 @@
-# Св. Георгиј — Staro Nagorichane
+# Св. Георгиј - Staro Nagorichane
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-svgeorgij.mk-brightgreen?style=flat-square&logo=google-chrome)](https://svgeorgij.mk)
 [![Angular](https://img.shields.io/badge/Angular-20-DD0031?style=flat-square&logo=angular)](https://angular.dev)
@@ -13,7 +13,7 @@
 
 ## Overview
 
-A modern, responsive web platform built for a real Orthodox church client in Macedonia. The site serves as an information hub for the parish — featuring a liturgical calendar, blog/news posts, catechesis content, and a photo gallery — backed by a custom-built CMS admin panel for full content control.
+A modern, responsive web platform built for a real Orthodox church client in Macedonia. The site serves as an information hub for the parish - featuring a liturgical calendar, blog/news posts, catechesis content, and a photo gallery - backed by a custom-built CMS admin panel for full content control.
 
 The frontend is an Angular 20 SPA with Angular Material and Tailwind CSS. The REST API is built with ASP.NET Core 10, Entity Framework Core, and SQL Server 2022, secured with JWT authentication and refresh token rotation. The entire stack is deployed on DigitalOcean droplet with Nginx as a reverse proxy handling HTTPS via Let's Encrypt.
 
@@ -30,21 +30,21 @@ The frontend is an Angular 20 SPA with Angular Material and Tailwind CSS. The RE
 ## Features
 
 ### Public Site
-- **Homepage** — Hero section, church overview, featured calendar, and latest posts
-- **Blog / News / Events / Catechesis** — Category-filtered post listings with rich content detail pages
-- **Photo Gallery** — Image grid with modal lightbox preview
-- **About the Church** — History and information about the monastery with optimized WebP images
-- **Orthodox Liturgical Calendar** — Full calendar with fasting periods, saint day details, and today's feast display
-- **Fully Localized** — Macedonian (Cyrillic) interface
-- **Responsive** — Mobile-first design, works across all screen sizes
+- **Homepage** - Hero section, church overview, featured calendar, and latest posts
+- **Blog / News / Events / Catechesis** - Category-filtered post listings with rich content detail pages
+- **Photo Gallery** - Image grid with modal lightbox preview
+- **About the Church** - History and information about the monastery with optimized WebP images
+- **Orthodox Liturgical Calendar** - Full calendar with fasting periods, saint day details, and today's feast display
+- **Fully Localized** - Macedonian (Cyrillic) interface
+- **Responsive** - Mobile-first design, works across all screen sizes
 
 ### Admin Panel (Protected)
-- **Dashboard** — At-a-glance stats: published posts count, category breakdown, quick navigation
-- **Post Management** — Create, edit, and delete posts with a rich text (WYSIWYG) editor
-- **Gallery Management** — Upload, preview, and delete church photos
-- **Content Organization** — Posts organized by category (News, Events, Catechesis, etc.)
-- **Secure Authentication** — JWT access tokens with automatic refresh token rotation
-- **Role-Based Access Control** — Admin-only routes protected by Angular route guards
+- **Dashboard** - At-a-glance stats: published posts count, category breakdown, quick navigation
+- **Post Management** - Create, edit, and delete posts with a rich text (WYSIWYG) editor
+- **Gallery Management** - Upload, preview, and delete church photos
+- **Content Organization** - Posts organized by category (News, Events, Catechesis, etc.)
+- **Secure Authentication** - JWT access tokens with automatic refresh token rotation
+- **Role-Based Access Control** - Admin-only routes protected by Angular route guards
 
 ---
 
@@ -64,21 +64,21 @@ The frontend is an Angular 20 SPA with Angular Material and Tailwind CSS. The RE
   <tr>
     <td align="center">
       <img src="assets/dashboard.jpg" alt="Admin Dashboard" width="480"/>
-      <br/><sub><b>Dashboard</b> — overview stats and quick navigation</sub>
+      <br/><sub><b>Dashboard</b> - overview stats and quick navigation</sub>
     </td>
     <td align="center">
       <img src="assets/add-post.jpg" alt="Add / Edit Post" width="480"/>
-      <br/><sub><b>Post Editor</b> — WYSIWYG editor with category and date picker</sub>
+      <br/><sub><b>Post Editor</b> - WYSIWYG editor with category and date picker</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
       <img src="assets/content-management-page.jpg" alt="Content Management" width="480"/>
-      <br/><sub><b>Content Management</b> — posts list with edit and delete actions</sub>
+      <br/><sub><b>Content Management</b> - posts list with edit and delete actions</sub>
     </td>
     <td align="center">
       <img src="assets/gallery-management.jpg" alt="Gallery Management" width="480"/>
-      <br/><sub><b>Gallery Management</b> — image upload and grid preview</sub>
+      <br/><sub><b>Gallery Management</b> - image upload and grid preview</sub>
     </td>
   </tr>
 </table>
@@ -92,7 +92,7 @@ Client Browser (HTTPS 443)
         │
         ▼
 ┌───────────────────┐
-│   Nginx (proxy)   │  — Auto-renewing Let's Encrypt TLS
+│   Nginx (proxy)   │  - Auto-renewing Let's Encrypt TLS
 └─────────┬─────────┘
           │
     ┌─────┴──────┐
@@ -125,7 +125,7 @@ sv-georgij/
 │       │       ├── layouts/           # Public layout wrapper
 │       │       └── shared/            # Header, footer, UI primitives
 │       └── package.json
-└── server/                    # .NET 10 API — private repository
+└── server/                    # .NET 10 API - private repository
 ```
 
 ---
@@ -165,4 +165,4 @@ The production stack runs on a **DigitalOcean Droplet** (Ubuntu 24.04 LTS):
 
 ## License
 
-This project was built for a private client. All rights reserved. The code is shared publicly for portfolio purposes only — please do not use it commercially.
+This project was built for a private client. All rights reserved. The code is shared publicly for portfolio purposes only - please do not use it commercially.
