@@ -70,7 +70,7 @@ The frontend is an Angular 20 SPA with Angular Material and Tailwind CSS. The RE
     </td>
     <td align="center">
       <img src="assets/add-post.jpg" alt="Add / Edit Post" width="480"/>
-      <br/><sub><b>Post Editor</b> - WYSIWYG editor with category and date picker</sub>
+      <br/><sub><b>Post Editor</b> - ngx-editor with category and date picker</sub>
     </td>
   </tr>
   <tr>
