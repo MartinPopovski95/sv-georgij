@@ -101,7 +101,7 @@ Client Browser (HTTPS 443)
     │            │
     ▼            ▼
 Angular SPA    .NET API       ───►  SQL Server 2022
-(static files) (port 5019)          Database: SvGeorgij
+(static files)
 ```
 
 All traffic is routed through a single domain (`svgeorgij.mk`). Nginx serves the pre-built Angular bundle from disk and proxies `/api/*` requests to the .NET application running as a systemd service.
@@ -159,7 +159,7 @@ ng serve
 The production stack runs on a **DigitalOcean Droplet** (Ubuntu 24.04 LTS):
 
 - Angular app is built with `ng build` and served as static files
-- .NET API runs as a `systemd` service on `localhost:5019`
+- .NET API runs as a `systemd` service
 - **Nginx** handles reverse proxying, HTTPS termination, and automatic certificate renewal via Let's Encrypt (Certbot)
 - Domain managed via **svgeorgij.mk**
 
