@@ -11,6 +11,12 @@
 
 ---
 
+## Live Site
+
+**[svgeorgij.mk](https://svgeorgij.mk)**
+
+---
+
 ## Overview
 
 A modern, responsive web platform built for a real Orthodox church client in Macedonia. The site serves as an information hub for the parish - featuring a liturgical calendar, blog/news posts, catechesis content, and a photo gallery - backed by a custom-built CMS admin panel for full content control.
@@ -21,11 +27,7 @@ The frontend is an Angular 20 SPA with Angular Material and Tailwind CSS. The RE
 
 ---
 
-## Live Site
 
-**[svgeorgij.mk](https://svgeorgij.mk)**
-
----
 
 ## Features
 
